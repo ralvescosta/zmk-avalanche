@@ -98,11 +98,11 @@
             // ---------------------------------------------------------------------------------------------------------------------------------------------
 
             bindings = <
-&none   &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                 &kp F6        &kp F7     &kp F8        &kp F9        &kp F10       &kp PRINTSCREEN
-&trans  &trans  &trans  &trans  &trans  &none                  &kp ASTERISK  &kp N7     &kp N8        &kp N9        &kp PLUS      &none
-&trans  &trans  &trans  &trans  &trans  &none   &none                        &kp SLASH  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp MINUS        &none      &none
-&trans  &none   &none   &none   &none   &trans  &trans  &none  &to 2         &trans     &trans        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3     &kp EQUAL  &none
-        &to 0   &trans  &trans  &trans  &trans                 &trans        &trans     &trans        &trans        &kp NUMBER_0
+&none   &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                 &kp F6          &kp F7        &kp F8          &kp F9           &kp F10       &kp PRINTSCREEN
+&trans  &trans  &trans  &trans  &trans  &none                  &kp ASTERISK    &kp N7        &kp N8          &kp N9           &kp PLUS      &none
+&trans  &trans  &trans  &trans  &trans  &none   &none                          &kp SLASH     &kp NUMBER_4    &kp N5           &kp NUMBER_6  &kp MINUS        &none      &none
+&trans  &none   &none   &none   &none   &trans  &trans  &none  &to 2           &trans        &trans          &kp NUMBER_1     &kp NUMBER_2  &kp NUMBER_3     &kp EQUAL  &none
+        &to 0   &trans  &trans  &trans  &trans                 &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp NUMBER_0
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN>;
