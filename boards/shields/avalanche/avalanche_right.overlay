@@ -27,3 +27,20 @@
     status = "okay";
 };
 
+&i2c1 {
+    status = "okay";
+
+    oled@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        label = "OLED";
+        width = <128>;
+        height = <32>;
+        rotation = <1>;        // Rotate 90° clockwise
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        invert = <0>;
+        flip = <0>;
+    };
+};
