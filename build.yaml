@@ -19,8 +19,8 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: avalanche_left nice_oled
+    shield: avalanche_left
   - board: nice_nano_v2
-    shield: avalanche_right nice_oled
+    shield: avalanche_right
   # - board: nice_nano_v2
   #   shield: settings_reset
