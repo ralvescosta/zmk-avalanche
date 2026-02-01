@@ -96,8 +96,9 @@ I've successfully analyzed and configured fixes for your ZMK split keyboard wake
 
 3. **Adjust connection interval** (if battery drain is too high):
    - Edit `CONFIG_ZMK_SPLIT_BLE_PREF_INT` in `config/avalanche.conf`
-   - Try `10000` (10ms) for slightly better battery life
-   - Or try `5000` (5ms) for even faster response (more drain)
+   - Try `8` (10ms = 8 × 1.25ms) for slightly better battery life
+   - Or keep at `6` (7.5ms) for fastest response
+   - Note: Value is in BLE units (multiply by 1.25ms for actual interval)
 
 4. **Disable deep sleep temporarily** (for testing):
    - Comment out `CONFIG_ZMK_SLEEP=y` in `config/avalanche.conf`
@@ -107,11 +108,12 @@ I've successfully analyzed and configured fixes for your ZMK split keyboard wake
 ## Technical Details
 
 ### Why 7.5ms Connection Interval?
-- Default ZMK interval is ~30ms for battery life
-- 7.5ms is **4x faster** data exchange between halves
+- Default ZMK interval is 24 units (30ms) for battery life
+- 6 units (7.5ms = 6 × 1.25ms) is **4x faster** data exchange between halves
 - During reconnection, faster interval means less "dead time"
 - This is the **most critical setting** for fixing your issue
 - Still reasonable for battery life (well-tested by community)
+- Note: Values are in BLE specification units (1.25ms each), not milliseconds
 
 ### Why Increased Buffers?
 - Default buffers can overflow during reconnection bursts
@@ -129,23 +131,25 @@ I've successfully analyzed and configured fixes for your ZMK split keyboard wake
 
 See `SPLIT_KEYBOARD_WAKE_FIX.md` for detailed tuning options, but here are quick presets:
 
-### Preset 1: Maximum Responsiveness (More Battery Drain)
+### Preset 1: Maximum Responsiveness (Current Config)
 ```ini
-CONFIG_ZMK_SPLIT_BLE_PREF_INT=5000  # 5ms interval
-CONFIG_ZMK_IDLE_SLEEP_TIMEOUT=1800000  # 30min deep sleep
-```
-
-### Preset 2: Balanced (Current Configuration)
-```ini
-CONFIG_ZMK_SPLIT_BLE_PREF_INT=7500  # 7.5ms interval
+CONFIG_ZMK_SPLIT_BLE_PREF_INT=6  # 7.5ms interval (6 × 1.25ms)
 CONFIG_ZMK_IDLE_SLEEP_TIMEOUT=900000  # 15min deep sleep
 ```
 
-### Preset 3: Battery Life Priority (Slightly Slower Wake)
+### Preset 2: Balanced (Slightly More Battery Life)
 ```ini
-CONFIG_ZMK_SPLIT_BLE_PREF_INT=15000  # 15ms interval
+CONFIG_ZMK_SPLIT_BLE_PREF_INT=8  # 10ms interval (8 × 1.25ms)
+CONFIG_ZMK_IDLE_SLEEP_TIMEOUT=900000  # 15min deep sleep
+```
+
+### Preset 3: Battery Life Priority (Slower Wake)
+```ini
+CONFIG_ZMK_SPLIT_BLE_PREF_INT=12  # 15ms interval (12 × 1.25ms)
 CONFIG_ZMK_IDLE_SLEEP_TIMEOUT=600000  # 10min deep sleep
 ```
+
+Note: All interval values are in BLE specification units (multiply by 1.25ms to get actual interval in milliseconds)
 
 ## Additional Resources
 

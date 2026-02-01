@@ -73,9 +73,10 @@ CONFIG_ZMK_SPLIT_BLE_PERIPHERAL_POSITION_QUEUE_SIZE=20
 ### 4. BLE Connection Interval (`config/avalanche.conf`)
 
 ```ini
-# Set preferred connection interval to 7.5ms (7500 microseconds) for better responsiveness
-# Default is often 30ms which can cause the observed delay after wake
-CONFIG_ZMK_SPLIT_BLE_PREF_INT=7500
+# Set preferred connection interval to 7.5ms (6 BLE units × 1.25ms = 7.5ms)
+# Default is 24 units (30ms) which can cause the observed delay after wake
+# Note: Value is in BLE specification units, multiply by 1.25ms to get actual interval
+CONFIG_ZMK_SPLIT_BLE_PREF_INT=6
 ```
 
 **Why this helps:**
@@ -153,8 +154,8 @@ If you need to further adjust the balance between responsiveness and battery lif
 
 ### More Battery Life (Sacrifice Some Responsiveness)
 ```ini
-# Increase connection interval to 15ms
-CONFIG_ZMK_SPLIT_BLE_PREF_INT=15000
+# Increase connection interval to 15ms (12 BLE units × 1.25ms = 15ms)
+CONFIG_ZMK_SPLIT_BLE_PREF_INT=12
 
 # Longer deep sleep timeout (30 minutes)
 CONFIG_ZMK_IDLE_SLEEP_TIMEOUT=1800000
@@ -162,8 +163,9 @@ CONFIG_ZMK_IDLE_SLEEP_TIMEOUT=1800000
 
 ### More Responsiveness (Sacrifice Battery Life)
 ```ini
-# Decrease connection interval to 5ms (aggressive)
-CONFIG_ZMK_SPLIT_BLE_PREF_INT=5000
+# Minimum recommended interval: 6 units (7.5ms)
+# Going lower may cause connection instability
+CONFIG_ZMK_SPLIT_BLE_PREF_INT=6
 
 # Never enter deep sleep (idle only)
 # CONFIG_ZMK_SLEEP=n
