@@ -120,13 +120,13 @@
             sensor-bindings = <&inc_dec_kp C_NEXT C_PREVIOUS>;
         };
 
-        SYMBOLS {
+        MAC {
             bindings = <
-&trans           &trans     &trans             &trans      &trans         &trans                              &trans         &trans     &trans            &trans                &trans                 &trans
-&trans           &kp APOS   &kp DOUBLE_QUOTES  &kp ASTRK   &kp LESS_THAN  &kp GREATER_THAN                    &kp AMPERSAND  &kp TILDE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &kp PERCENT            &trans
-&macro_vim_save  &trans     &kp EXCLAMATION    &kp MINUS   &kp PLUS       &kp EQUAL         &kp HASH                         &kp PIPE   &kp COLON         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp QUESTION     &trans       &trans
-&trans           &kp CARET  &kp COMMA          &kp PERIOD  &kp BACKSLASH  &kp GRAVE         &trans    &trans  &trans         &trans     &kp SLASH         &kp DOLLAR            &kp LEFT_BRACE         &kp RIGHT_BRACE  &kp AT_SIGN  &trans
-                 &trans     &trans             &trans      &trans         &trans                              &trans         &trans     &trans            &trans                &trans
+&trans            &trans  &trans  &trans  &trans  &trans                                             &trans         &trans     &trans            &trans                &trans                 &trans
+&trans            &kp Q   &kp W   &kp E   &kp R   &kp T                                              &kp AMPERSAND  &kp TILDE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &kp PERCENT            &trans
+&macro_vim_save   &trans  &kp A   &kp S   &kp D   &kp F   &kp G                                                     &kp PIPE   &kp COLON         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp QUESTION     &trans       &trans
+&kp LEFT_COMMAND  &kp Z   &kp X   &kp C   &kp V   &kp B   &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS  &trans  &trans         &trans     &kp SLASH         &kp DOLLAR            &kp LEFT_BRACE         &kp RIGHT_BRACE  &kp AT_SIGN  &trans
+                  &trans  &trans  &trans  &trans  &trans                                             &trans         &trans     &trans            &trans                &trans
             >;
 
             sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
