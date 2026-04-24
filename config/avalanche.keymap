@@ -125,8 +125,8 @@
 &kp ESC           &kp NUMBER_1    &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4   &kp NUMBER_5                                             &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp GRAVE
 &kp TAB           &kp Q           &kp W         &kp E         &kp R          &kp T                                                    &kp Y         &kp U         &kp I         &kp O         &kp P         &kp LEFT_BRACKET
 &mo 1             &kp LEFT_SHIFT  &kp A         &kp S         &kp D          &kp F         &kp G                                                    &kp H         &kp J         &kp K         &kp L         &kp SEMICOLON     &kp RBKT   &kp SQT
-&kp LEFT_COMMAND  &kp Z           &kp X         &kp C         &kp V          &kp B         &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS  &trans  &trans        &kp DELETE    &kp N         &kp M         &kp COMMA     &kp PERIOD        &kp SLASH  &trans
-                  &trans          &mo 2         &kp SPACE     &kp BACKSPACE  &kp LEFT_ALT                                             &kp MINUS     &kp EQUAL     &kp ENTER     &kp HOME      &kp END
+&kp LEFT_COMMAND  &kp Z           &kp X         &kp C         &kp V          &kp B         &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS  &trans  &trans        &kp DELETE    &kp N         &kp M         &kp COMMA     &kp PERIOD        &kp SLASH  &kp BSLH
+                  &mo 2           &kp A         &kp SPACE     &kp BACKSPACE  &kp LEFT_ALT                                             &kp MINUS     &kp EQUAL     &kp ENTER     &kp HOME      &kp END
             >;
 
             sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
